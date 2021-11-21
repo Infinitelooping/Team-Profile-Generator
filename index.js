@@ -6,6 +6,8 @@ const Employee = require("./lib/Employee");
 const fs = require("fs");
 const inquirer = require("inquirer");
 
+const htmlTemplate = require("./src/index");
+
 //Employee Roster
 const roster = [];
 
@@ -226,6 +228,10 @@ const roleSelect =
     choices: ["Manager", "Engineer", "Intern", "Employee", "No additional members"]
 };
 
+function generatePage(fileContent) {
+    fs.writeFile("./dist/index.html", fileContent);
+}
+
 
 function addToTeam() {
     inquirer.prompt(nextEmployeeQuestions)
@@ -277,13 +283,32 @@ function addToTeam() {
                                 console.log("No one else!");
                                 console.log(roster);
                                 //function to generate page
+
+                                const fileContent = htmlTemplate(roster)
+
+                                generatePage(fileContent);
+
                                 break;
 
                         }
                     })
             } else {
                 console.log("No other employees");
-                //function to generate page
+
+                console.log(roster);
+
+                // const fileContent = htmlTemplate(roster);
+
+                // generatePage(fileContent);
+
+                fs.writeFile("./dist/index.html", htmlTemplate(roster), (err) => {
+                    if (err)
+                      console.log(err);
+                    else {
+                      console.log("File written successfully\n");
+                    }
+                });
+                
             }
         })
 }
