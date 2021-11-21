@@ -1,4 +1,13 @@
 
-.main {
-    background-color: darkgray;
+main {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+nav {
+    background-color: darkolivegreen;
+}
+
+.card {
+    background-color: darkseagreen;
 }

@@ -3,7 +3,7 @@ function generateManager(managerArr) {
 
     return managerArr.map(({ name, id, email, officeNumber }) => {
         return `
-    <div class="card" style="width: 18rem;">
+    <div class="col-6 card m-2" style="width: 18rem;">
     <div class="card-body">
         <h5 class="card-title">${name}</h5>
         <h6 class="card-subtitle mb-2 text-muted">Manager</h6>
@@ -23,7 +23,7 @@ function generateEngineer(engineerArr) {
 
     return engineerArr.map(({ name, id, email, github }) => {
         return `
-        <div class="card" style="width: 18rem;">
+        <div class="col-6 card m-2" style="width: 18rem;">
         <div class="card-body">
         <h5 class="card-title">${name}</h5>
         <h6 class="card-subtitle mb-2 text-muted">Engineer</h6>
@@ -44,7 +44,7 @@ function generateEmployee(employeeArr) {
 
     return employeeArr.map(({ name, id, email }) => {
         return `
-        <div class="card" style="width: 18rem;">
+        <div class="col-6 card m-2" style="width: 18rem;">
         <div class="card-body">
         <h5 class="card-title">${name}</h5>
         <h6 class="card-subtitle mb-2 text-muted">Employee</h6>
@@ -64,7 +64,7 @@ function generateIntern(internArr) {
 
     return internArr.map(({ name, id, email, school }) => {
         return `
-        <div class="card" style="width: 18rem;">
+        <div class="col-6 card m-2" style="width: 18rem;">
         <div class="card-body">
         <h5 class="card-title">${name}</h5>
         <h6 class="card-subtitle mb-2 text-muted">Intern</h6>
@@ -105,7 +105,7 @@ module.exports = roster => {
 
     <header>
         <!-- As a heading -->
-        <nav class="navbar navbar-light bg-light">
+        <nav class="navbar navbar-light">
         <div class="container-fluid">
             <span class="navbar-brand mb-0 h1">My Team</span>
         </div>
@@ -113,7 +113,7 @@ module.exports = roster => {
 
     </header>
 
-    <main>
+    <main row>
     ${generateManager(managerArr)}
     ${generateEngineer(engineerArr)}
     ${generateEmployee(employeeArr)}
