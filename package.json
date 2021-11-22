@@ -1,7 +1,12 @@
 {
   "dependencies": {
     "i": "^0.3.7",
-    "inquirer": "^8.2.0",
+    "inquirer": "^8.2.0"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
     "jest": "^27.3.1"
   }
 }
